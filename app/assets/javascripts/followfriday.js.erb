@@ -1,0 +1,84 @@
+$(document).ready(function(){
+
+  /* function to disable or enable the tweet button */
+  function buttonstatus(stats){
+
+    if (stats == 'enabled'){
+
+      $('#submit').removeAttr('disabled'); 
+      $('#twittericon').attr('src',"<%= image_path 'bird_blue_16.png' %>");
+
+    } else if (stats == 'disabled') {
+
+      $('#submit').attr('disabled','disabled');
+      $('#twittericon').attr('src',"<%= image_path 'bird_gray_16.png' %>");
+
+    }
+  }
+
+  $('.friend').click(function(event) {
+
+    if($(this).hasClass( 'disabled' )){
+      return;
+    }
+
+    $(this).toggleClass('unselected');
+    $(this).toggleClass( 'selected' );
+
+    var friendArray = [];
+    $('.selected').each(function(){
+      friendArray.push(this.childNodes[7].innerHTML);
+    });
+
+    var friendList = '#ff ' + friendArray.join(', ');
+
+    if(friendArray.length==0){
+
+     $('#tweetarea').text('');
+     $('#count').text('140');
+     buttonstatus('disabled');
+
+    } else {
+
+     $('#tweetarea').text(friendList);
+     $('#count').text('140' - friendList.length);
+     $('#tweetform').attr('action','https://www.twitter.com/intent/tweet?text=' + encodeURIComponent(friendList));
+
+     if (friendList.length>'140'){
+
+      buttonstatus('disabled')
+      $('#count').css({'color':'red','font-weight':'bold'});
+
+     } else {
+
+      buttonstatus('enabled');
+      $('#count').css({'color':'green','font-weight':'normal'});
+
+     }
+
+    }
+
+    $('.unselected').each(function(){
+
+      if( (this.childNodes[7].innerHTML.length + 2) > parseInt($('#count').text()) ){
+
+        $(this).toggleClass('unselected');
+        $(this).toggleClass( 'disabled' );
+
+      }
+
+    });
+
+    $('.disabled').each(function(){
+
+      if( (this.childNodes[7].innerHTML.length + 2) < parseInt($('#count').text()) ){
+
+        $(this).toggleClass( 'disabled' );
+        $(this).toggleClass('unselected');
+
+      }
+
+    });
+
+  });
+});

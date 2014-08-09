@@ -1,0 +1,26 @@
+  <h2>Hi <%= @user.name %> Select all the friend to insert and press tweet</h2>
+  <hr />
+  <div id='followFridayContent'>
+    <div id='tweetformwrapper' class='span3'>
+      <form action='' id='tweetform' method='post'>
+        <textarea cols='25' rows='12' id='tweetarea'disabled></textarea><br>
+        <span id='count'>140</span></br>
+        <button type='submit' id='submit' disabled class='btn'><img id='twittericon' src="<%= image_path 'bird_gray_16.png' %>"> Tweet</button>
+        <p><a href='/signout'>Logout</a></p>
+      </form>
+    </div>
+    <div id='friendlist' class='span12'>
+      <% @friendsDetail.each do |friend| %>
+        <div class='friend unselected'>
+          <% if friend.profile_banner_uri? %>
+            <img src='<%= friend.profile_banner_uri %>' class='' onError="this.onerror=null;this.src='<%= image_path 'defaultCover.jpg' %>';" ></img>
+          <% else %>
+            <img id='twittericon' src="<%= image_path 'defaultCover.jpg' %>" >
+          <% end %>
+            <img src='<%= friend.profile_image_url %>' class='friendAvatar'></img>
+            <%= friend.name %><br>
+            <span class='screenName'>@<%= friend.screen_name %></span><br>
+        </div>
+      <% end %>
+    </div>
+  </div>
