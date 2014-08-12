@@ -1,5 +1,5 @@
 .secret
-01_development_twitter.rb
+01_twitter_APIkey.rb
 *.gem
 *.rbc
 /.config

@@ -17,10 +17,7 @@
           <% else %>
             <img id='twittericon' src="<%= image_path 'defaultCover.jpg' %>" >
           <% end %>
-            <img src='<%= friend.profile_image_url %>' class='friendAvatar'></img>
-            <%= friend.name %><br>
-            <span class='screenName'>@<%= friend.screen_name %></span><br>
-        </div>
-      <% end %>
+            <img src='<%= friend.profile_image_url %>' class='friendAvatar'></img><span class='name'><%= friend.name %></span><span class='screenName'>@<%= friend.screen_name %></span>
+        </div><% end %>
     </div>
   </div>
