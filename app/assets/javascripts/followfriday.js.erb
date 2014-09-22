@@ -27,8 +27,9 @@ $(document).ready(function(){
 
     var friendArray = [];
     $('.selected').each(function(){
-      friendArray.push(this.childNodes[7].innerHTML);
-    });
+      friendArray.push(this.childNodes[5].innerHTML);
+      }
+    );
 
     var friendList = '#ff ' + friendArray.join(', ');
 
@@ -60,7 +61,7 @@ $(document).ready(function(){
 
     $('.unselected').each(function(){
 
-      if( (this.childNodes[7].innerHTML.length + 2) > parseInt($('#count').text()) ){
+      if( (this.childNodes[5].innerHTML.length + 2) > parseInt($('#count').text()) ){
 
         $(this).toggleClass('unselected');
         $(this).toggleClass( 'disabled' );
@@ -71,7 +72,7 @@ $(document).ready(function(){
 
     $('.disabled').each(function(){
 
-      if( (this.childNodes[7].innerHTML.length + 2) < parseInt($('#count').text()) ){
+      if( (this.childNodes[5].innerHTML.length + 2) < parseInt($('#count').text()) ){
 
         $(this).toggleClass( 'disabled' );
         $(this).toggleClass('unselected');
