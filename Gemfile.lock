@@ -60,7 +60,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     hashie (2.1.2)
     hike (1.2.3)
-    http (0.6.1)
+    http (0.6.4)
       http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
     i18n (0.9.5)
