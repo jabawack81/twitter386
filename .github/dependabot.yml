@@ -1,0 +1,17 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  assignees:
+  - jabawack81
+  ignore:
+  - dependency-name: rails
+    versions:
+    - 6.1.2
+    - 6.1.2.1
+  - dependency-name: jbuilder
+    versions:
+    - 2.11.2
