@@ -95,10 +95,12 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    date (3.5.1)
     digest (3.1.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     equalizer (0.0.11)
+    erb (6.0.2)
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.11.1)
@@ -171,7 +173,8 @@ GEM
     omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
-    psych (4.0.4)
+    psych (5.3.1)
+      date
       stringio
     public_suffix (4.0.6)
     racc (1.6.0)
@@ -212,8 +215,10 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
-    rdoc (6.4.0)
+    rdoc (7.2.0)
+      erb
       psych (>= 4.0.0)
+      tsort
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.0.1)
@@ -225,7 +230,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sdoc (2.4.0)
+    sdoc (2.6.5)
       rdoc (>= 5.0)
     simple_oauth (0.3.1)
     sprockets (4.0.3)
@@ -235,12 +240,13 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    stringio (3.0.2)
+    stringio (3.2.0)
     strscan (3.0.3)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.9)
     timeout (0.3.0)
+    tsort (0.2.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
