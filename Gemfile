@@ -44,6 +44,6 @@ end
 
 #gem 'twitter'
 gem 'twitter', :git => 'https://github.com/sferik/twitter.git'
-gem 'omniauth-twitter', '1.4.0'
+gem 'omniauth-twitter', '1.5.0'
 
 gem 'rails_12factor'
